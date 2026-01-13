@@ -23,3 +23,6 @@ WHERE region IS NOT NULL;
 
 -- How many orders did not have a ship region?
 
+SELECT COUNT(*)
+FROM orders
+WHERE shipregion IS NULL;
