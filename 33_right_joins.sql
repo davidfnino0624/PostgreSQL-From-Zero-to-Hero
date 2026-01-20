@@ -11,4 +11,4 @@ WHERE orderid IS NULL;
 
 SELECT *
 FROM customercustomerdemo
-RIGHT JOIN public.customers ON customercustomerdemo.customerid = customers.customerid;
+RIGHT JOIN customers ON customercustomerdemo.customerid = customers.customerid;
