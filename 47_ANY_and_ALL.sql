@@ -58,8 +58,8 @@ FROM customers
 JOIN orders USING (customerid)
 JOIN order_details USING (orderid)
 WHERE
-	order_details.unitprice * quantity > ALL (SELECT AVG (order_details.unitprice * quantity)
-											  FROM order_details
-											  GROUP BY productid
+order_details.unitprice * quantity > ALL (SELECT AVG (order_details.unitprice * quantity)
+											FROM order_details
+											JOIN orders USING (orderid)
+											GROUP BY customerid
 );
-
